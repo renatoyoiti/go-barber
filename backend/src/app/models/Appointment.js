@@ -4,7 +4,9 @@ class Appointment extends Model {
   static init(sequelize) {
     super.init(
       {
-        date: Sequelize.DATE,
+        date: {
+          type: 'TIMESTAMPS',
+        },
         canceled_at: {
           type: 'TIMESTAMPS',
         },
