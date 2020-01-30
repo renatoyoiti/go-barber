@@ -2,6 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 
 import multerConfig from './config/multer';
+import authMiddleware from './app/middlewares/auth';
 
 import AppointmentController from './app/controllers/AppointmentController';
 import FileController from './app/controllers/FileController';
@@ -10,9 +11,7 @@ import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
-
-import authMiddleware from './app/middlewares/auth';
-import Appointment from './app/models/Appointment';
+import AvailableController from './app/controllers/AvailableController';
 
 const routes = Router();
 const upload = multer(multerConfig);
@@ -25,6 +24,7 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/providers', ProviderController.index);
+routes.get('/providers/:providerId/available', AvailableController.index);
 
 routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
