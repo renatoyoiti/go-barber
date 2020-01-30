@@ -39,6 +39,12 @@ class AppointmentController {
       ],
     });
 
+    appointments.forEach(appointment => {
+      const { date } = appointment;
+      const formatDate = format(date, "yyyy-MM-dd'T'HH:mm:ssxxx");
+      appointment.date = formatDate;
+    });
+
     return res.json(appointments);
   }
 
@@ -128,6 +134,10 @@ class AppointmentController {
       content: `Novo agendamento de ${user.name} para ${formattedDate}`,
       user: provider_id,
     });
+
+    const { date: dateToFormat } = appointment;
+    const appDate = format(dateToFormat, "yyyy-MM-dd'T'HH:mm:ssxxx");
+    appointment.date = appDate;
 
     return res.json(appointment);
   }
