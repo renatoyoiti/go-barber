@@ -21,7 +21,7 @@ module.exports = {
   plugins: ['react', 'prettier', 'react-hooks', 'jsx-ally', 'import'],
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.js'] }],
     'react/jsx-one-expression-per-line': 'off',
     'import/prefer-default-export': 'off',
     'react/prefer-stateless-function': 'off',
