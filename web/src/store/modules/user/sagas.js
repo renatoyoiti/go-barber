@@ -17,7 +17,10 @@ export function* updateProfile({ payload }) {
 
     const response = yield call(api.put, 'users', profile);
 
-    toast.success('Perfil atualizado com sucesso');
+    toast('Perfil atualizado com sucesso', {
+      className: 'toast-success',
+      progressClassName: 'toast-success-progress-bar'
+    });
 
     yield put(updateProfileSuccess(response.data));
   } catch (error) {

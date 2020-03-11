@@ -53,4 +53,15 @@ export default createGlobalStyle`
   .toast-error-progress-bar {
     background: ${lighten(0.2, '#c94444')}
   }
+
+  .toast-success {
+    background: ${lighten(0.05, '#07bc0c')};
+    color: #FCF7F8;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+
+  .toast-success-progress-bar {
+    background: ${lighten(0.2, '#07bc0c')};
+  }
 `;
