@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdExitToApp } from 'react-icons/md';
 
 import logo from '~/assets/logo-purple.svg';
 import Notifications from '~/components/Notifications';
 
-import { Container, Content, Profile } from './styles';
+import { Container, Content, Profile, ExitFromApp } from './styles';
 
 export default function Header() {
   return (
@@ -28,6 +29,9 @@ export default function Header() {
               alt="Renato"
             />
           </Profile>
+          <ExitFromApp>
+            <MdExitToApp color="#5b5393" size={20} />
+          </ExitFromApp>
         </aside>
       </Content>
     </Container>

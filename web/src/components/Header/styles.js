@@ -37,9 +37,10 @@ export const Content = styled.div`
 
 export const Profile = styled.div`
   display: flex;
-  margin-left: 20px;
+  margin: 0 20px;
   padding-left: 20px;
   border-left: 1px solid #5b5393;
+  border-right: 1px solid #5b5393;
 
   div {
     text-align: right;
@@ -61,5 +62,12 @@ export const Profile = styled.div`
   img {
     height: 32px;
     border-radius: 50%;
+    margin-right: 20px;
   }
+`;
+
+export const ExitFromApp = styled.button`
+  background: none;
+  border: 0;
+  position: relative;
 `;
