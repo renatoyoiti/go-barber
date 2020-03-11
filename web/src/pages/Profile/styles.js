@@ -8,7 +8,6 @@ export const Container = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
 
     input {
       background: rgba(0, 0, 0, 0.2);
