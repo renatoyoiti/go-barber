@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
       },
       date: {
-        type: 'TIMESTAMP',
+        type: Sequelize.DATE,
         allowNull: false,
       },
       user_id: {
