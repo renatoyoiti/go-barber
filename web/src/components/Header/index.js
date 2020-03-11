@@ -1,16 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { MdExitToApp } from 'react-icons/md';
 
 import logo from '~/assets/logo-purple.svg';
 import Notifications from '~/components/Notifications';
 
+import { signOut } from '~/store/modules/auth/actions';
+
 import { Container, Content, Profile, ExitFromApp } from './styles';
 
 export default function Header() {
+  const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
-  console.tron.log(profile);
+
+  function handleLogout() {
+    dispatch(signOut());
+  }
 
   return (
     <Container>
@@ -36,7 +43,7 @@ export default function Header() {
               alt="Renato"
             />
           </Profile>
-          <ExitFromApp>
+          <ExitFromApp type="button" onClick={handleLogout}>
             <MdExitToApp color="#5b5393" size={20} />
           </ExitFromApp>
         </aside>
