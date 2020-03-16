@@ -25,7 +25,7 @@ export function* signIn({ payload }) {
 
     yield put(signInSuccess(token, user));
 
-    history.push('dashboard');
+    // history.push('dashboard');
   } catch (error) {
     Alert.alert(
       'Falha na autenticação',
@@ -43,7 +43,6 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
 
     // history.push('/');
